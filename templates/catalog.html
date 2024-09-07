@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Shoe Catalog</h2>
+<div class="catalog">
+    {% for shoe in shoes %}
+    <div class="shoe">
+        <img src="{{ url_for('static', filename='images/' + shoe['image']) }}" alt="{{ shoe['name'] }}">
+        <h3>{{ shoe['name'] }}</h3>
+        <p>Price: ${{ shoe['price'] }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
