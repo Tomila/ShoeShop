@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template
 
 main = Flask(__name__)
@@ -18,7 +19,9 @@ def catalog():
     return render_template('catalog.html', shoes=shoe_catalog)
 
 if __name__ == '__main__':
-    main.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    main.run(host="0.0.0.0", port=port)
+    #main.run(debug=True)
 
 
 
