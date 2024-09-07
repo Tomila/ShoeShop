@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 
-app = Flask(__name__)
+main = Flask(__name__)
 
 # Dummy data for catalog
 shoe_catalog = [
@@ -9,16 +9,16 @@ shoe_catalog = [
     {"id": 3, "name": "Running Pro", "price": 130, "image": "running_pro.jpg"},
 ]
 
-@app.route('/')
+@main.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/catalog')
+@main.route('/catalog')
 def catalog():
     return render_template('catalog.html', shoes=shoe_catalog)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    main.run(debug=True)
 
 
 
