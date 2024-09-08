@@ -8,13 +8,28 @@
 </head>
 <body>
     <header>
-        <h1>My Shoe Store</h1>
+        <div class="header-content"></div>
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Anunalle Company Logo" class="logo">
+            <h1 class="site-title">Fancy Feet Company</h1>
         <nav>
             <a href="{{ url_for('index') }}">Home</a>
             <a href="{{ url_for('catalog') }}">Catalog</a>
+            <a href="{{ url_for('contact') }}">Contact Us</a>
+            <a href="{{ url_for('faq') }}">FAQs</a>
         </nav>
     </header>
     <main>
+        {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+ <!-- Page-specific content goes here -->
         {% block content %}{% endblock %}
     </main>
 </body>

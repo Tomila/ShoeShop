@@ -9,11 +9,15 @@
 <body>
     <header>
         <div class="container">
-            <h1>Shoe Shop</h1>
+            <div class="header-content">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Anunalle Company Logo" class="logo">
+            <h1 class="site-title">Fancy Feet Company</h1>
+        </div>
             <nav>
                 <a href="{{ url_for('index') }}">Home</a>
                 <a href="{{ url_for('catalog') }}">Catalog</a>
-                <a href="#">Contact Us</a>
+                <a href="{{ url_for('contact') }}">Contact Us</a>
+                <a href="{{ url_for('faq') }}">FAQs</a>
             </nav>
         </div>
     </header>

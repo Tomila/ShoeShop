@@ -12,27 +12,128 @@ body {
     line-height: 1.6;
 }
 
+/* Catalog Styles */
+.catalog {
+    padding: 40px 0;
+    background-color: #f9f9f9; /* Light background for the section */
+}
+
+.catalog h2 {
+    text-align: center; /* Center the section heading */
+    margin-bottom: 40px; /* Space below the heading */
+    font-size: 2rem; /* Adjust font size */
+}
+
+.catalog-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the items horizontally */
+    gap: 20px; /* Space between items */
+}
+
+/* Contact Form Styles */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact h2 {
+    text-align: center; /* Center the text horizontally */
+    margin-bottom: 30px; /* Adjust space below the heading */
+}
+
+.contact label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact input, .contact textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.contact button:hover {
+    background-color: #0056b3;
+}
+
+/* FAQ Section Styles */
+.faq {
+    padding: 40px 0;
+    background-color: #f9f9f9; /* Light background for the section */
+}
+
+.faq h2 {
+    text-align: center; /* Center the section heading */
+    margin-bottom: 30px; /* Space below the heading */
+    font-size: 2rem; /* Adjust font size */
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.faq-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
 h1, h2, h3 {
     color: #333;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
+/* Header Styles */
 header {
     background-color: #333;
     color: white;
     padding: 20px 0;
-}
-
-header h1 {
-    font-size: 32px;
     text-align: center;
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; /* Ensure horizontal alignment */
+}
+
+header img.logo {
+    width: 80px; /* Adjust width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Space between logo and title */
+}
+
+header h1.site-title {
+    font-size: 2em; /* Adjust size as needed */
+    color: white; /* Ensure the title is visible */
+    margin: 0; /* Remove default margin */
+}
+
+/* Navigation Styles */
 nav {
     text-align: center;
     margin-top: 10px;
@@ -81,13 +182,13 @@ main {
 
 .shoe {
     background-color: white;
-    padding: 15px;
+    padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 10px;
+    border-radius: 8px;
     text-align: center;
-    width: 30%;
+    width: 250px; /* Set a fixed width */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .shoe img {
@@ -98,9 +199,8 @@ main {
 }
 
 .shoe h3 {
-    font-size: 18px;
+    font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #333;
 }
 
 .shoe .original-price {
@@ -181,6 +281,8 @@ footer {
         width: 80%;
     }
 }
+
+
 
 
 
