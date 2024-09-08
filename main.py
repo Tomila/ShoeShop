@@ -22,9 +22,30 @@ mail = Mail(main)
 
 # Dummy data for catalog with special offers
 shoe_catalog = [
-    {"id": 1, "name": "Sneaker X", "price": 120, "sale_price": 90, "image": "sneaker_x.jpg"},
-    {"id": 2, "name": "Classic Leather", "price": 100, "sale_price": 70, "image": "classic_leather.jpg"},
-    {"id": 3, "name": "Running Pro", "price": 130, "sale_price": 100, "image": "running_pro.jpg"},
+    {
+        "id": 1,
+        "name": "Sneaker X",
+        "price": 120,
+        "image": "sneaker_x.jpg",
+        "description": "A sleek and comfortable sneaker perfect for all-day wear.",
+        "sale_price": 100
+    },
+    {
+        "id": 2,
+        "name": "Classic Leather",
+        "price": 100,
+        "image": "classic_leather.jpg",
+        "description": "Elegant leather shoes for a timeless look.",
+        "sale_price": 85
+    },
+    {
+        "id": 3,
+        "name": "Running Pro",
+        "price": 130,
+        "image": "running_pro.jpg",
+        "description": "High-performance running shoes with superior cushioning.",
+        "sale_price": 110
+    },
 ]
 
 # Flash sale duration and end time

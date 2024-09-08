@@ -1,20 +1,70 @@
-{% extends "layout.html" %}
-
-{% block content %}
-    <section class="catalog">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Shop - Catalog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/modal.js') }}" defer></script>
+</head>
+<body>
+    <header>
         <div class="container">
-            <h2>Shoe Catalog</h2>
-            <div class="catalog-items">
-                {% for shoe in shoes %}
-                <div class="shoe">
-                    <img src="{{ url_for('static', filename='images/' + shoe['image']) }}" alt="{{ shoe['name'] }}">
-                    <h3>{{ shoe['name'] }}</h3>
-                    <p class="price">Price: ${{ shoe['price'] }}</p>
-                    <a href="#" class="btn">View Details</a>
-                </div>
-                {% endfor %}
+            <div class="header-content">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Anunalle Company Logo" class="logo">
+                <h1 class="site-title">Sneaker Street Company</h1>
             </div>
+            <nav>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('catalog') }}">Catalog</a>
+                <a href="{{ url_for('contact') }}">Contact Us</a>
+                <a href="{{ url_for('faq') }}">FAQs</a>
+            </nav>
         </div>
-    </section>
-{% endblock %}
+    </header>
+
+    <main>
+        <section class="catalog">
+            <div class="container">
+                <h2>Catalog</h2>
+                <div class="shoes">
+                    {% for shoe in shoes %}
+                    <div class="shoe">
+                        <img src="{{ url_for('static', filename=shoe.image) }}" alt="{{ shoe.name }}">
+                        <h3>{{ shoe.name }}</h3>
+                        <p class="price">${{ shoe.price }}</p>
+                        <button class="view-details"
+                                data-id="{{ shoe.id }}"
+                                data-image="{{ url_for('static', filename=shoe.image) }}"
+                                data-name="{{ shoe.name }}"
+                                data-price="{{ shoe.price }}"
+                                data-description="{{ shoe.description }}">View Details</button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Structure -->
+    <div id="shoeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-image" src="" alt="Shoe Image">
+            <h3 id="modal-title"></h3>
+            <p id="modal-price"></p>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sneaker Street Company. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
 
