@@ -1,8 +1,69 @@
-{% extends "layout.html" %}
-{% block content %}
-<h2>Welcome to My Shoe Store</h2>
-<p>Your one-stop shop for the latest and greatest in footwear.</p>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Shop - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Shoe Shop</h1>
+            <nav>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('catalog') }}">Catalog</a>
+                <a href="#">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Flash Sale Section -->
+        <section class="flash-sale">
+            <div class="container">
+                <h2>🔥 Flash Sale Ends Soon! 🔥</h2>
+                <p class="countdown">Hurry up! Sale ends at: {{ flash_sale_end.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+
+                <div class="shoes">
+                    {% for shoe in shoes %}
+                    <div class="shoe">
+                        <img src="{{ url_for('static', filename=shoe.image) }}" alt="{{ shoe.name }}">
+                        <h3>{{ shoe.name }}</h3>
+                        <p class="original-price">Original Price: <strike>${{ shoe.price }}</strike></p>
+                        <p class="sale-price">Sale Price: <strong>${{ shoe.sale_price }}</strong></p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest News Section -->
+        <section class="news">
+            <div class="container">
+                <h2>Latest News</h2>
+                <div class="news-items">
+                    {% for news in news_items %}
+                    <div class="news-item">
+                        <h3>{{ news.title }}</h3>
+                        <p><small>{{ news.date }}</small></p>
+                        <p>{{ news.content }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Shoe Shop. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
 
 
 
